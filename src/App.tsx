@@ -1,9 +1,7 @@
+import MainPage from './pages/MainPage';
+
 function App() {
-  return (
-    <div className="bg-red-500">
-      hello
-    </div>
-  );
+  return <MainPage />;
 }
 
 export default App;
