@@ -78,5 +78,5 @@ export const translateSlice = createSlice({
   },
 });
 
-export const reducer = translateSlice.reducer;
-export const action = translateSlice.actions;
+export const translateReducer = translateSlice.reducer;
+export const translateAction = translateSlice.actions;

@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
-import { reducer } from './slices/translateSlice'
+import { translatedReducer } from './slices/translatedSlice'
+import { translateReducer } from './slices/translateSlice'
 
 export const store = configureStore({
   reducer: {
-    translate: reducer
+    translate: translateReducer,
+    language: translatedReducer
   },
 })
 
