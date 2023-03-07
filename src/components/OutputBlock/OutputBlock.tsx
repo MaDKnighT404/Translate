@@ -17,7 +17,7 @@ const OutputBlock = () => {
       <ul className="m-auto flex  cursor-pointer justify-evenly">
         <li
           className={`${
-            state.lang === 'ru' ? 'border-b-2 border-indigo-500' : ''
+            state.lang === 'ru' ? 'border-b-2 border-y-red-300 text-red-100' : ''
           } mx-4 mb-1 py-5 xl:mx-2 sm:text-sm`}
           onClick={() => changeLanguage('ru')}
         >
@@ -25,7 +25,7 @@ const OutputBlock = () => {
         </li>
         <li
           className={`${
-            state.lang === 'en' ? 'border-b-2 border-indigo-500' : ''
+            state.lang === 'en' ? 'border-b-2 border-y-red-300 text-red-100' : ''
           } mx-4 mb-1 py-5 xl:mx-2 sm:text-sm `}
           onClick={() => changeLanguage('en')}
         >
@@ -33,7 +33,7 @@ const OutputBlock = () => {
         </li>
         <li
           className={`${
-            state.lang === 'de' ? 'border-b-2 border-indigo-500' : ''
+            state.lang === 'de' ? 'border-b-2 border-y-red-300 text-red-100' : ''
           } mx-4 mb-1 py-5 xl:mx-2 sm:text-sm`}
           onClick={() => changeLanguage('de')}
         >

@@ -42,7 +42,7 @@ const InputBlock = () => {
       <ul className="m-auto flex cursor-pointer justify-evenly">
         <li
           className={`${
-            lang === 'ru' ? 'border-b-2 border-indigo-500' : ''
+            lang === 'ru' ? 'border-b-2 border-y-red-300 text-red-100' : ''
           } mx-4 mb-1 py-5 xl:mx-2 sm:text-sm`}
           onClick={() => changeLanguage('ru')}
         >
@@ -50,7 +50,7 @@ const InputBlock = () => {
         </li>
         <li
           className={`${
-            lang === 'en' ? 'border-b-2 border-indigo-500' : ''
+            lang === 'en' ? 'border-b-2 border-y-red-300 text-red-100' : ''
           } mx-4 mb-1 py-5 xl:mx-2 sm:text-sm `}
           onClick={() => changeLanguage('en')}
         >
@@ -58,7 +58,7 @@ const InputBlock = () => {
         </li>
         <li
           className={`${
-            lang === 'de' ? 'border-b-2 border-indigo-500' : ''
+            lang === 'de' ? 'border-b-2 border-y-red-300 text-red-100' : ''
           } mx-4 mb-1 py-5 xl:mx-2 sm:text-sm`}
           onClick={() => changeLanguage('de')}
         >
@@ -66,7 +66,7 @@ const InputBlock = () => {
         </li>
       </ul>
       <textarea
-        className="m-auto h-[300px] w-[600px] resize-none rounded-lg border-[2px] border-gray-600 p-4 xl:w-[450px] lg:h-[200px] lg:w-[300px] md:w-[100%] sm:h-[150px]"
+        className="m-auto h-[300px] w-[600px] resize-none rounded-lg border-[2px] bg-zinc-500 border-gray-600 p-4 xl:w-[450px] lg:h-[200px] lg:w-[300px] md:w-[100%] sm:h-[150px]"
         placeholder={t('Placeholder')}
         value={value}
         onChange={changeValue}

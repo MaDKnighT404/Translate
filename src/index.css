@@ -15,3 +15,8 @@
     @apply max-w-[1280px] xl:max-w-[1024px] lg:max-w-[768px] md:max-w-[640px];
   }
 }
+
+body {
+  height: 100vh;
+  background: rgb(113 113 122);
+}
