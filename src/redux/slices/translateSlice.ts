@@ -29,10 +29,10 @@ type ResponseData = {
 
 export const translateRequest = createAsyncThunk(
   'translate/requestStatus',
-  async (value: string) => {
+  async ({value, from, to} : {value:string, from:string | null, to:string}) => {
     const encodedParams = new URLSearchParams();
-    encodedParams.append("from", "ru");
-    encodedParams.append("to", "en");
+    encodedParams.append("from", from as string) ;
+    encodedParams.append("to", to as string);
     encodedParams.append("text", value);
     
 const options = {
@@ -61,9 +61,13 @@ const options = {
 );
 
 export const translateSlice = createSlice({
-  name: 'transtale',
+  name: 'translate',
   initialState,
-  reducers: {},
+  reducers: {
+    changeOutputValue: (state, action) => {
+      state.outputValue = action.payload
+    }
+  },
   extraReducers: (builder) => {
     builder.addCase(translateRequest.fulfilled, (state: ValueState, action: PayloadAction<ResponseData>) => {
       state.isFetching = false;
