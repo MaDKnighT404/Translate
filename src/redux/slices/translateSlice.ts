@@ -50,7 +50,6 @@ const options = {
     const request: any = axios
       .request(options)
       .then(function (response: Response) {
-        console.log(response.data);
         return response.data;
       })
       .catch(function (error) {
