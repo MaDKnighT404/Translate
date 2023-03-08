@@ -1,6 +1,6 @@
 # Translater
 
-### deploy: https://madknight404.github.io/business-grow/dist/
+### deploy: https://madknight404.github.io/Translate/dist/
 
 ## Features:
 - Adaptive & Responsive
