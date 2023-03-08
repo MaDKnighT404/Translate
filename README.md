@@ -1,6 +1,6 @@
 # Translater
 
-### deploy: https://madknight404.github.io/Translate/dist/
+### deploy: https://translater-madknight404.netlify.app/
 
 ## Features:
 - Adaptive & Responsive
