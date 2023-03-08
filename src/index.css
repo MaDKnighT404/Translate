@@ -14,6 +14,22 @@
   .container {
     @apply max-w-[1280px] xl:max-w-[1024px] lg:max-w-[768px] md:max-w-[640px];
   }
+
+  .listItem {
+    @apply mx-4 mb-3 py-4 xl:mx-2 sm:text-sm;
+  }
+
+  .active {
+    @apply border-b-2 border-y-red-300 text-red-100;
+  }
+
+  .customBlockWrapper {
+    @apply m-auto mt-[150px] flex gap-20 lg:mt-[100px] lg:gap-10  md:w-[100%] md:flex-col md:px-6;
+  }
+
+  .customBlock {
+    @apply m-auto h-[300px] w-[600px] resize-none rounded-lg border-[3px] border-indigo-300 bg-zinc-500 p-4 shadow-lg shadow-slate-900 outline-none xl:w-[450px] lg:h-[200px] lg:w-[300px] md:w-[100%] sm:h-[150px];
+  }
 }
 
 body {

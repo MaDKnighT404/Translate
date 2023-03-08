@@ -41,32 +41,26 @@ const InputBlock = () => {
     <div className="flex flex-col sm:m-auto sm:w-[100%]">
       <ul className="m-auto flex cursor-pointer justify-evenly">
         <li
-          className={`${
-            lang === 'ru' ? 'border-b-2 border-y-red-300 text-red-100' : ''
-          } mx-4 mb-1 py-5 xl:mx-2 sm:text-sm`}
+          className={`${lang === 'ru' ? 'active' : ''} listItem`}
           onClick={() => changeLanguage('ru')}
         >
           {t('Ru')}
         </li>
         <li
-          className={`${
-            lang === 'en' ? 'border-b-2 border-y-red-300 text-red-100' : ''
-          } mx-4 mb-1 py-5 xl:mx-2 sm:text-sm `}
+          className={`${lang === 'en' ? 'active' : ''} listItem`}
           onClick={() => changeLanguage('en')}
         >
           {t('En')}
         </li>
         <li
-          className={`${
-            lang === 'de' ? 'border-b-2 border-y-red-300 text-red-100' : ''
-          } mx-4 mb-1 py-5 xl:mx-2 sm:text-sm`}
+          className={`${lang === 'de' ? 'active' : ''} listItem`}
           onClick={() => changeLanguage('de')}
         >
           {t('De')}
         </li>
       </ul>
       <textarea
-        className="m-auto h-[300px] w-[600px] resize-none rounded-lg border-[2px] bg-zinc-500 border-gray-600 p-4 xl:w-[450px] lg:h-[200px] lg:w-[300px] md:w-[100%] sm:h-[150px]"
+        className="customBlock outline-none"
         placeholder={t('Placeholder')}
         value={value}
         onChange={changeValue}
