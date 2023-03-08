@@ -20,7 +20,7 @@
   }
 
   .active {
-    @apply border-b-2 border-y-red-300 text-red-100;
+    @apply relative animate-show text-red-100 before:absolute before:-inset-1 before:block  before:border-b-2 before:border-y-red-300 before:animate-width;
   }
 
   .customBlockWrapper {

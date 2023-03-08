@@ -3,10 +3,14 @@ import { translateAction, translateRequest } from '../../redux/slices/translateS
 import { useAppDispatch, useAppSelector } from '../../redux/store';
 import useDebounce from '../../helpers/useDebounceEffect';
 import { useTranslation } from 'react-i18next';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const InputBlock = () => {
   const [value, setValue] = useState('');
   const [lang, setLang] = useState<string | null>(localStorage.getItem('i18nextLng'));
+  const [listItems, setListItems] = useState(['ru', 'en', 'de']);
+
+  const [isAnim, setIsAnim] = useState(true);
   const debouncedValue = useDebounce<string>(value, 500);
   const dispatch = useAppDispatch();
   const to = useAppSelector((state) => state.language.lang);
@@ -35,33 +39,32 @@ const InputBlock = () => {
     setLang(localStorage.getItem('i18nextLng'));
     setValue('');
     dispatch(translateAction.changeOutputValue(''));
+    setIsAnim((v) => !v);
   };
 
   return (
     <div className="flex flex-col sm:m-auto sm:w-[100%]">
+        <AnimatePresence>
       <ul className="m-auto flex cursor-pointer justify-evenly">
-        <li
-          className={`${lang === 'ru' ? 'active' : ''} listItem`}
-          onClick={() => changeLanguage('ru')}
-        >
-          {t('Ru')}
-        </li>
-        <li
-          className={`${lang === 'en' ? 'active' : ''} listItem`}
-          onClick={() => changeLanguage('en')}
-        >
-          {t('En')}
-        </li>
-        <li
-          className={`${lang === 'de' ? 'active' : ''} listItem`}
-          onClick={() => changeLanguage('de')}
-        >
-          {t('De')}
-        </li>
+          {listItems.map((item) => (
+            <motion.li
+              key={item}
+              className={`${lang === item ? 'active' : ''} listItem`}
+              onClick={() => changeLanguage(item)} 
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.5 }}
+              transition={{ duration: 0.5 }}
+            >
+              {t(item)}
+
+            </motion.li>
+          ))}
       </ul>
+        </AnimatePresence>
       <textarea
         className="customBlock outline-none"
-        placeholder={t('Placeholder')}
+        placeholder={t('placeholder')}
         value={value}
         onChange={changeValue}
       />
