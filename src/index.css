@@ -28,7 +28,7 @@
   }
 
   .customBlock {
-    @apply m-auto h-[300px] w-[600px] resize-none rounded-lg border-[3px] border-indigo-300 bg-zinc-500 p-4 shadow-lg shadow-slate-900 outline-none xl:w-[450px] lg:h-[200px] lg:w-[300px] md:w-[100%] sm:h-[150px];
+    @apply m-auto h-[300px] w-[600px] resize-none rounded-lg border-[3px] border-indigo-300 bg-slate-100 p-4 shadow-lg shadow-slate-900 outline-none xl:w-[450px] lg:h-[200px] lg:w-[300px] md:w-[100%] sm:h-[150px];
   }
 }
 
